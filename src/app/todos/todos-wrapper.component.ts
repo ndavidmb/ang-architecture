@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TodosStateSignalsService } from './data-access/state/todos-state.signals.service';
 
 @Component({
   selector: 'selector-name',

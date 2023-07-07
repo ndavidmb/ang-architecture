@@ -5,8 +5,4 @@ import { Component, OnInit } from '@angular/core';
   standalone: true,
   template: `<div>Form 3</div>`,
 })
-export class Form3Component implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class Form3Component {}

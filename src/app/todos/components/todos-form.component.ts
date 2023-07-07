@@ -1,8 +1,6 @@
-import { Component, effect, inject } from '@angular/core';
-import { TodosFacade } from '../data-access/facade/todos.facade';
-import { TodosStateSignalsService } from '../data-access/state/todos-state.signals.service';
-import { REQUEST_STATE } from '../interfaces/model/todos-state';
+import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TodosFacade } from '../data-access/facade/todos.facade';
 
 @Component({
   selector: 'app-todos-form',
@@ -15,8 +13,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class TodosFormComponent {
   #todosFacade = inject(TodosFacade);
   #dialogRef = inject(MatDialogRef<TodosFormComponent>);
-
-  constructor() {}
 
   callDelayedFoo(error = false) {
     this.#todosFacade
