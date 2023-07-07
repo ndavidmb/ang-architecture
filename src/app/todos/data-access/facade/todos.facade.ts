@@ -47,6 +47,7 @@ export class TodosFacade {
   callDelayedFoo(todo: Omit<Todo, 'id'>, error: boolean): Observable<void> {
     this.#todosStateSignalsService.setLoading(true);
     if (error) {
+      this.#todosStateSignalsService.setLoading(false)
       throw 'error';
     }
 
