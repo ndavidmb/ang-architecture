@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      [errorStateMatcher]="errorMatcherService.matcher"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error
+      *ngIf="
+        !form.controls.email.hasError('required') &&
+        form.controls.email.hasError('email')
+      "
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="form.controls.email.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      formControlName="password"
+      [errorStateMatcher]="errorMatcherService.matcher"
+      placeholder="Password"
+    />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="form.controls.password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

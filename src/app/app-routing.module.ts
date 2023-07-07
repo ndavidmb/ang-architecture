@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'todos',
+    loadChildren: () =>
+      import('./todos/todos.module').then((m) => m.TodosModule),
+  },
+  {
+    path: 'multiform',
+    loadChildren: () =>
+      import('./multiform-example/multiform-example.module').then((m) => m.MultiFormModule),
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
